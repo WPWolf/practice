@@ -49,25 +49,26 @@ def find_sum():
         print(None)
 
 # Скользящее окно
-with open('input.txt', 'r') as file_in:
-    lines = file_in.readlines()
-result = []
-string = str(lines[0]).strip()
-unique_string = ''
-start_pos = 0
-i = 0
-while i < len(string):
-    if string[i] not in unique_string:
-        unique_string += string[i]
-        i += 1
-    else:
-        result.append(i-start_pos)
-        start_pos += unique_string.find(string[i]) + 1
-        i = start_pos
-        unique_string = ''
+def serf_win():
+    with open('input.txt', 'r') as file_in:
+        lines = file_in.readlines()
+    result = []
+    string = str(lines[0]).strip()
+    unique_string = ''
+    start_pos = 0
+    i = 0
+    while i < len(string):
+        if string[i] not in unique_string:
+            unique_string += string[i]
+            i += 1
+        else:
+            result.append(i-start_pos)
+            start_pos += unique_string.find(string[i]) + 1
+            i = start_pos
+            unique_string = ''
 
-result.append(i-start_pos)
-result.sort()
-max_string = result[-1]
+    result.append(i-start_pos)
+    result.sort()
+    max_string = result[-1]
 
-print(max_string)
+    print(max_string)
