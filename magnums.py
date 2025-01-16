@@ -1,9 +1,8 @@
 # Скользящее среднее
 def find_sma():
-    with open('test.txt', 'r') as file_in:
+    with open('input.txt', 'r') as file_in:
         lines = file_in.readlines()
 
-    time_sec = lines[0]
     arr = [int(item) for item in lines[1].split()]
 
     window_size = int(lines[2])
@@ -22,7 +21,7 @@ def find_sma():
 # Двойная индексация
 def find_sum():
     with open('input.txt', 'r') as file_in:
-    lines = file_in.readlines()
+        lines = file_in.readlines()
 
     average = int(lines[0])
     arr = [int(item) for item in lines[1].split()]
@@ -47,6 +46,7 @@ def find_sum():
 
     if not out:
         print(None)
+
 
 # Скользящее окно
 def serf_win():
